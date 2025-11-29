@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>05员工表格练习</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入员工姓名" id="i1">
+    <input type="text" placeholder="请输入员工工资" id="i2">
+    <input type="text" placeholder="请输入员工岗位" id="i3">
+    <button onclick="addEmp()">添加员工</button>
+    <hr>
+
+    <table border="1px">
+        <caption>员工表</caption>
+        <tr>
+            <th>姓名</th>
+            <th>工资</th>
+            <th>岗位</th>
+        </tr>
+    </table>
+
+    <script>
+        function addEmp() {
+            let arr = [];
+            // 1.获取输入的数据
+            let uName = document.getElementById("i1").value;
+            let uSalary = document.getElementById("i2").value;
+            let uJob = document.getElementById("i3").value;
+            // 2.创建元素
+            let tr = document.createElement("tr");
+            let nameTd = document.createElement("td");
+            let salaryTd = document.createElement("td");
+            let jobTd = document.createElement("td");
+            // 3.赋值
+            nameTd.innerHTML = uName;
+            salaryTd.innerHTML = uSalary ;
+            jobTd.innerHTML = uJob;
+            // 4.放入表格
+            tr.append(nameTd, salaryTd, jobTd);
+            let table = document.querySelector("table");
+            table.append(tr);
+            // 5.清空输入框
+            document.getElementById("i1").value = "";
+            document.getElementById("i2").value = "";
+            document.getElementById("i3").value = "";
+            // 6.存入数组
+            arr.push({name:uName, salary:uSalary, job:uJob});
+        }
+
+    </script>
+</body>
+</html>

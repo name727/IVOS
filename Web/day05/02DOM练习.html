@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>我是标题:<span class = "s"></span></h1>
+    <input type="text" id="i1">
+    <input type="text" id="i2">
+    <button onclick="f1()">按钮</button>
+    <button onclick="f2()">按钮2</button>
+    <script>
+        function f1(){
+           let spanEl = document.querySelector('.s');
+           console.log(spanEl);
+           spanEl.innerHTML = '嘿嘿嘿';
+        }
+
+        function f2(){
+            let input1 = document.querySelector('#i1'); //CSS选择器查询方法，‘#’表示ID
+            let input2 = document.getElementById('i2'); //专门使用ID获取元素
+            console.log(input1.value);
+            console.log(typeof input2.value);
+            let i2 = parseFloat(input2.value);
+            console.log(i2, typeof i2);
+        }
+    </script>
+</body>
+</html>

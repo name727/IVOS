@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>07事件监听</title>
+</head>
+<body>
+    <h4>哈哈哈哈哈哈啊哈哈</h4>
+    <button>点我</button>
+    <button onclick="alert('警告框')">弹出警告框</button>
+    <button onclick="confirm('缺人吗')">弹出确认框</button>
+    <button onclick="prompt('请输入')">弹出提示输入框</button>
+    <script>
+        let h4E = document.querySelector('h4');
+        h4E.addEventListener('mouseover', function () {
+            console.log('悬停');
+        })
+        let buttonE = document.querySelector('button');
+        buttonE.addEventListener('click', function () {
+            console.log('按钮被点击了');
+        })
+        window.addEventListener('resize', function () {
+            console.log('窗口大小被改变了');
+        })
+        window.addEventListener('scroll', function () {
+            console.log('窗口滚动了');
+        })
+    </script>
+</body>
+</html>

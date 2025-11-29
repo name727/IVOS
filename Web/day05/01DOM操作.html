@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>01DOM操作</title>
+</head>
+<body>
+
+    <button onclick="addMoney()">点我变富</button>
+    <script>
+        function addMoney() { //1.点击按钮，调用此函数
+            let imgEl = document.createElement('img'); //2.创建一个空的img元素
+            imgEl.src = 'img/11.jpg'; //3.设置img元素的src属性值
+            imgEl.width = 200; //4.设置width属性值
+            let bodyEl = document.querySelector('body'); //5.根据标签名获取body元素
+            bodyEl.append(imgEl); //6.将img元素添加到body元素上
+        }
+    </script>
+
+
+</body>
+</html>

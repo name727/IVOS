@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>03计算器练习</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入数字1" id="i1"> <br>
+    <input type="text" placeholder="请输入数字2" id="i2"> <br>
+    <button onclick="calc('+')">加</button>
+    <button onclick="calc('-')">减</button>
+    <button onclick="calc('*')">乘</button>
+    <button onclick="calc('/')">除</button>
+    <h4>运算结果: <span></span></h4>
+
+    <script>
+        function calc(i) {
+            let input1 = document.querySelector('#i1'); //CSS选择器查询方法，‘#’表示ID
+            let input2 = document.getElementById('i2');
+            input1 = parseFloat(input1.value);
+            input2 = parseFloat(input2.value);
+            let spanEl = document.querySelector('span');
+            switch (i) {
+                case '+': spanEl.innerHTML = input1+input2;break;
+                case '-': spanEl.innerHTML = input1-input2;break;
+                case '*': spanEl.innerHTML = input1*input2;break;
+                case '/':
+                    if (input2 != 0) {
+                        spanEl.innerHTML = input1/input2;
+                    } else {
+                        alert('除数不能为零')
+                    }
+            }
+        }
+    </script>
+</body>
+</html>
