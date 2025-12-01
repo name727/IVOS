@@ -26,6 +26,13 @@ public class GlobalExceptionHandler {
     2.如果没有对应的异常处理方法,则会找父类的异常处理方法;
     3.如果没有父类的异常处理方法,则会走SpringMVC自己的异常处理机制;
     */
+    @ExceptionHandler
+    public JsonResult doHandleServiceException(ServiceException ex) {
+        //当业务层出现异常，打印错误日志，显示当前状态码的描述信息
+        log.error("ServiceException: " + ex.getStatusCode().getMsg());
+        //将错误状态码返回给前端
+        return new JsonResult(ex.getStatusCode());
+    }
 
     /**
      * 第1个异常处理方法:IllegalArgumentException

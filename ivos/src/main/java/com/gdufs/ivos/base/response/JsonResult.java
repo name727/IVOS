@@ -74,6 +74,7 @@ public class JsonResult {
     }
 
     public static JsonResult ok(){
+
         return ok(null);
     }
 }

@@ -1,11 +1,10 @@
 package com.gdufs.ivos.user.mapper;
 
-import com.gdufs.ivos.user.pojo.entity.User;
-import org.apache.ibatis.annotations.Select;
+import com.gdufs.ivos.user.pojo.vo.UserVO;
 import org.springframework.stereotype.Repository;
 
+/*  @Repository注解表示当前是持久层的一部分，主要职责是进行数据库操作*/
 @Repository
 public interface UserMapper {
-    @Select("select * from user where username=#{userName}")
-User seletctByUserName(String userName);
+    UserVO selectByUsername(String name);
 }
